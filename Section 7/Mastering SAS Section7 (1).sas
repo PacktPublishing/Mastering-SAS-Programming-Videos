@@ -37,7 +37,7 @@ date = %sysfunc(today());
 date_format1=date;
 date_format2=date;
 date_format3=date;
-Format date_format1 monyy7. date_format2 date9. date_format3 WEEKDATX23;
+Format date_format1 monyy7. date_format2 date9. date_format3 WEEKDATX23.;
 RUN;
 
 PROC PRINT;
@@ -46,22 +46,26 @@ RUN;
 
 /* ARIMA Model */
 /* FORECAST ONLY WITH P AND Q , NO D  */
-proc arima data = LIBREF.FORECAST;
-identify var = Sales nlag = 23 ;
-estimate p = 1  q = 1;
+proc arima data = LIBREF.ELECTRONIC_ORDER;
+identify var = Sales nlag = 24 ;
 run;
 
-/* Making series statinary by differencing it by order 1 */
-proc arima data = LIBREF.FORECAST;
+/*Making Series Statiionary */
+proc arima data = LIBREF.ELECTRONIC_ORDER;
+identify var = Sales(1) nlag = 24 ;
+run;
+
+/*perform Estimation*/
+proc arima data = LIBREF.ELECTRONIC_ORDER;
 identify var = Sales(1) nlag = 23 ;
-estimate p = 1  q = 1;
+estimate p = 1 ;
 run;
 
-/* Making series statinary by differencing it by order 1 */
-proc arima data = LIBREF.FORECAST;
+/* perform forecasting */
+proc arima data = LIBREF.ELECTRONIC_ORDER;
 identify var = Sales(1) nlag = 22 ;
 estimate p = 1  q = 1;
-forecast lead = 12 interval = month id = Period out = results;
+forecast lead = 12 interval = month id = order_date out = results;
 run;
 
 

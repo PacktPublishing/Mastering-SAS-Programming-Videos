@@ -92,9 +92,15 @@ summary target=investigation nowarning;
  modify 'Order investigation' reward -500;
 evaluate;
 summary / target=Application;
+save;
+move payment before investigation;
+evaluate;
+recall;
+
 treeplot / linka=1 linkb=2 
 symbold=2 symbolc=1 symbole=3 compress name="dt4";
 run;
+
 
 /* result indicate it is optimal to do the following 
 : The loan officer should order the credit investigation and approve the loan 
