@@ -2,7 +2,7 @@
 Master SAS for Data Analysis, Data Management and Regression.
 
 ##
-This is the code repository for [Mastering SAS Programming[Video]](https://www.packtpub.com/?utm_source=github), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the video course from start to finish.
+This is the code repository for [Mastering SAS Programming[Video]](https://www.packtpub.com/data/mastering-sas-programming-video), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the video course from start to finish.
 
 ## About the Video Course
 SAS is one of the most popular applications for data analysis and is used widely in enterprises across various sectors such as finance, and healthcare. It holds the highest job market share of all analytics tools available today. If you have a basic SAS programming background and want to get into Data Analysis by mastering SAS and taking your skills to a different level, then this is the right course for you!
